@@ -1,0 +1,2 @@
+cargo:rustc-link-search=native=/home/roger/git/osqp_wasm/build/out
+cargo:rustc-link-lib=static=osqp

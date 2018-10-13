@@ -1,0 +1,49 @@
+#!/bin/bash
+
+bindgen bindings.h -o src/bindings.rs \
+--distrust-clang-mangling \
+--no-layout-tests \
+--no-recursive-whitelist \
+--no-prepend-enum-name \
+--raw-line "use {c_float, c_int, OSQPTimer};" \
+--whitelist-type csc \
+--whitelist-type LinSysSolver \
+--whitelist-type OSQPScaling \
+--whitelist-type OSQPSolution \
+--whitelist-type OSQPInfo \
+--whitelist-type OSQPPolish \
+--whitelist-type OSQPData \
+--whitelist-type OSQPSettings \
+--whitelist-type OSQPWorkspace \
+--whitelist-type linsys_solver \
+--whitelist-type linsys_solver_type \
+--whitelist-type ffi_osqp_status \
+--whitelist-function osqp_setup \
+--whitelist-function osqp_solve \
+--whitelist-function osqp_cleanup \
+--whitelist-function osqp_update_lin_cost \
+--whitelist-function osqp_update_bounds \
+--whitelist-function osqp_update_lower_bound \
+--whitelist-function osqp_update_upper_bound \
+--whitelist-function osqp_warm_start \
+--whitelist-function osqp_warm_start_x \
+--whitelist-function osqp_warm_start_y \
+--whitelist-function osqp_update_P \
+--whitelist-function osqp_update_A \
+--whitelist-function osqp_update_P_A \
+--whitelist-function osqp_update_rho \
+--whitelist-function osqp_update_max_iter \
+--whitelist-function osqp_update_eps_abs \
+--whitelist-function osqp_update_eps_rel \
+--whitelist-function osqp_update_eps_prim_inf \
+--whitelist-function osqp_update_eps_dual_inf \
+--whitelist-function osqp_update_alpha \
+--whitelist-function osqp_update_warm_start \
+--whitelist-function osqp_update_scaled_termination \
+--whitelist-function osqp_update_check_termination \
+--whitelist-function osqp_update_delta \
+--whitelist-function osqp_update_polish \
+--whitelist-function osqp_update_polish_refine_iter \
+--whitelist-function osqp_update_verbose \
+--whitelist-function osqp_update_time_limit \
+--whitelist-function osqp_set_default_settings \
